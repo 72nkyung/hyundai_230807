@@ -3,7 +3,6 @@
 // Compile: Ctrl + F7
 // Compile + Linking + Run: Ctrl + F5
 
-
 // 1. 확장자
 // - C언어: .c
 // -  C++: .cpp .cc .cxx ...
@@ -41,11 +40,10 @@ int main(void)
 
 int main()
 {
-	std::printf("Hello, C++\n");
+    std::printf("Hello, C++\n");
 
-
-	// return 0;
-	// 프로세스가 정상 종료되었음을 의미합니다.
-	// : C++에서 자동적으로 컴파일할 때, 컴파일러가 동일한 기계어를
-	//   만들어줍니다.
+    // return 0;
+    // 프로세스가 정상 종료되었음을 의미합니다.
+    // : C++에서 자동적으로 컴파일할 때, 컴파일러가 동일한 기계어를
+    //   만들어줍니다.
 }
