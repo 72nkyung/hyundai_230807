@@ -37,6 +37,7 @@ int main(void)
 
 // C++의 표준헤더는 확장자가 없는 경우가 많습니다.
 #include <cstdio>
+// => C의 표준라이브러리 함수를 std의 이름 공간에서 사용할 수 있습니다.
 
 int main()
 {
