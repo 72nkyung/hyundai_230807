@@ -112,6 +112,7 @@ int main()
 }
 #endif
 
+#if 1
 int n = 10;
 
 int main()
@@ -121,3 +122,4 @@ int main()
 
     std::cout << ::n << std::endl; // 전역변수 n
 }
+#endif
