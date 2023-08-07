@@ -58,6 +58,10 @@ int main()
 //  4) C99 표준에도 인라인 함수가 도입되었습니다.
 //     static inline void foo() {}
 
+//  5) 인라인 함수는 컴파일 시간에 함수의 호출이 아닌 기계어로 치환을 수행하기 때문에
+//     함수의 구현을 헤더를 통해서 제공해야 합니다.
+//    => 인라인 함수는 Internal linkage를 갖습니다.
+
 inline int square(int x)
 {
     return x * x;
