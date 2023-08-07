@@ -84,6 +84,7 @@ int main()
 // * using 선언 / using 지시어는 헤더 파일에서는 절대 사용하면 안됩니다.
 #endif
 
+#if 0
 // 전역 공간의 전역 변수
 int count = 42;
 
@@ -108,4 +109,15 @@ void play()
 int main()
 {
     audio::play();
+}
+#endif
+
+int n = 10;
+
+int main()
+{
+    int n = 100;
+    std::cout << n << std::endl; // 지역변수 n
+
+    std::cout << ::n << std::endl; // 전역변수 n
 }
