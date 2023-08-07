@@ -69,9 +69,9 @@ int main()
 {
     double d = 3.14;
     // int x = { d }; // 에러!
-    int x = { (int)d };
+    int x = { (int)d }; // Uniform Copy initialization
 
     long long n = 10000LL;
     // int x2 { n }; // 에러!
-    int x2 { (int)n };
+    int x2 { (int)n }; // Uniform Direct initialization
 }
