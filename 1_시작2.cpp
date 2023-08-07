@@ -31,6 +31,8 @@ int main()
     std::scanf("%d", &n);
     std::printf("%d\n", n);
 
+    // 주소를 전달하지 않아도, 변수의 값을
+    // 변경할 수 있습니다.
     std::cin >> n;
     std::cout << n << std::endl;
 }
