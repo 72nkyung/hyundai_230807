@@ -50,9 +50,14 @@ namespace mp3 {
 // 암묵적으로 접근할 수 있습니다.
 using namespace std;
 using namespace audio::mp3;
+using namespace audio;
 
 int main()
 {
+    // using namespace audio;
+    mp3::play();
+
+    // using namespace audio::mp3;
     play();
 
     cout << "Hello, C++" << endl;
