@@ -11,7 +11,14 @@ using namespace std;
 
 // C++ Template
 template <typename TYPE>
-TYPE square(TYPE x) { return x * x; }
+inline TYPE square(TYPE x) { return x * x; }
+// 장점: 적은 코드로 모든 타입에서 동작하는 일반적인 함수를 정의할 수 있습니다.
+// 단점
+//  - 인자의 타입의 종류에 따라서 함수가 생성되므로,
+//    인자의 타입의 종류가 많을 수록 코드 메모리의 사용량이 증가될 수 있다.
+//  => 인라인 최적화
+
+//  - 템플릿은 반드시 헤더를 통해서 제공되어야 합니다.
 
 int main()
 {
