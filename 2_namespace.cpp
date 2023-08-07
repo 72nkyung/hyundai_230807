@@ -42,6 +42,9 @@ namespace mp4 {
 // 3. namespace를 사용하면 프로그램의 각 요소를
 //    관련된 요소끼리 그룹화할 수 있습니다.
 
+// 4. C++ 표준의 모든 요소는 std 이름 공간안에 약속되어 있습니다.
+//   std::cout / std::cin / std::printf / std::scanf
+
 int main()
 {
     video::mp3::play();
