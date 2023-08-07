@@ -22,6 +22,7 @@ int main()
 }
 #endif
 
+#if 0
 // C++11, Uniform Initialization(일관된 초기화)
 int main()
 {
@@ -36,4 +37,41 @@ int main()
 
     int x2[3] { 10, 20, 30 };
     Point pt2 { 10, 20 };
+}
+#endif
+
+// - C/C++은 실수 타입이 정수 타입으로의
+//   더 큰 표현 범위를 가지는 정수가 더 작은 표현 범위를 가지는 정수 타입의
+//   암묵적인 변환을 허용하고 있습니다.
+//  => 컴파일 에러와 경고가 발생하지 않습니다.
+#if 0
+int main()
+{
+    double d = 3.14;
+    int x = d;
+    // 1. 소수점이 사라집니다.
+    // 2. int 표현범위를 넘어선 데이터가 대입될 경우,
+    //    오버플로우가 발생할 수 있습니다.
+
+    long long n = 10000LL;
+    int x2 = n;
+    // - 오버플로우의 위험성이 있습니다.
+}
+#endif
+
+// Uniform Initialization을 사용하는 경우,
+// 암묵적인 변환(실수 -> 정수, 정수 -> 실수, long -> int)을
+// 허용하지 않습니다.
+// => Preventing Narrow
+//  : 명시적인 캐스팅이 필요합니다.
+
+int main()
+{
+    double d = 3.14;
+    // int x = { d }; // 에러!
+    int x = { (int)d };
+
+    long long n = 10000LL;
+    // int x2 { n }; // 에러!
+    int x2 { (int)n };
 }
