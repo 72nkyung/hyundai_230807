@@ -19,6 +19,7 @@ using namespace std;
 // C++11 - constexpr
 //   : 상수 표현식에 지정할 수 있는 키워드입니다.
 
+#if 0
 int main()
 {
     int a = 10 + 5;
@@ -42,4 +43,27 @@ int main()
     // 실행 시간에 변하는 값(변수)를 통해 상수를 만들 경우,
     // 컴파일 타임에 상수의 값을 결정할 수 없습니다.
     // => 런타임 상수
+}
+#endif
+
+#if 0
+// GCC, Clang
+// => VLA(가변 길이 배열), 표준이 아닙니다.
+int main()
+{
+    int n = 42;
+    // int arr[n];
+    // - 배열의 크기는 상수 표현식, 컴파일 타임 결정되어야 합니다.
+}
+#endif
+
+int main()
+{
+    constexpr int c1 = 100;
+
+    int n = 100;
+    const int c2 = n;
+
+    // 실행 시간에 이후에 값을 변경할 수 없습니다.
+    // C++에서는 반드시 const 변수는 초기화를 해야 합니다.
 }
