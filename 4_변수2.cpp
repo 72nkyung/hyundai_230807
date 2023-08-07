@@ -7,6 +7,7 @@ struct Point {
     int y;
 };
 
+#if 0
 int main()
 {
     // Copy Initialization(복사 초기화)
@@ -16,6 +17,23 @@ int main()
 
     // Direct Initialization(직접 초기화)
     int n2(42);
+    int x2[3] { 10, 20, 30 };
+    Point pt2 { 10, 20 };
+}
+#endif
+
+// C++11, Uniform Initialization(일관된 초기화)
+int main()
+{
+    // Copy Initialization(복사 초기화)
+    int n1 = { 42 };
+
+    int x1[3] = { 10, 20, 30 };
+    Point pt1 = { 10, 20 };
+
+    // Direct Initialization(직접 초기화)
+    int n2 { 42 };
+
     int x2[3] { 10, 20, 30 };
     Point pt2 { 10, 20 };
 }
