@@ -19,6 +19,7 @@ int main()
 }
 #endif
 
+#if 0
 namespace audio {
 namespace mp3 {
     void play() { }
@@ -29,6 +30,26 @@ namespace mp3 {
 using audio::mp3::play;
 using std::cout;
 using std::endl;
+
+int main()
+{
+    play();
+
+    cout << "Hello, C++" << endl;
+}
+#endif
+
+namespace audio {
+namespace mp3 {
+    void play() { }
+}
+}
+
+// 방법 3. using 지시어(Directive)
+// > 특정한 이름 공간(namespace)에 있는 모든 것을
+// 암묵적으로 접근할 수 있습니다.
+using namespace std;
+using namespace audio::mp3;
 
 int main()
 {
