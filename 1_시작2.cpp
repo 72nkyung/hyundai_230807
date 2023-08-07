@@ -9,6 +9,7 @@
 // printf -> stdout
 // scanf  -> scanf
 
+#if 0
 int main()
 {
     int n = 42;
@@ -17,6 +18,19 @@ int main()
 
     std::printf("%d, %c, %lf\n", n, c, d);
 
+    // 서식을 지정하지 않아도 변수의 타입에 따라서
+    // 자동으로 처리됩니다.
     std::cout << n << ", " << c << ", "
               << d << std::endl;
+}
+#endif
+
+int main()
+{
+    int n;
+    std::scanf("%d", &n);
+    std::printf("%d\n", n);
+
+    std::cin >> n;
+    std::cout << n << std::endl;
 }
