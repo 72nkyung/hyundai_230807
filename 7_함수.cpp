@@ -9,10 +9,13 @@ using namespace std;
 
 //  - 주의사항 2가지
 //  1) 반드시 뒤에서부터 지정해야 합니다.
-//  2) 기본 파라미터는 함수의 선언부에만 작성됩니다.
+//  2) 선언과 구현을 분리해서 관리하는 제품 코드에서는,
+//     기본 파라미터는 함수의 선언부에만 작성됩니다.
 
 // 선언 => 헤더 파일
-int add(int a, int b, int c = 0, int d = 0);
+// int add(int a, int b, int c = 0, int d = 0);
+
+#include "add.h"
 
 int main()
 {
@@ -25,6 +28,7 @@ int main()
     //      add(10, 20, 0, 0)
 }
 
+#if 0
 // 정의
 // > 파라미터의 기본값을 지정하면 안됩니다.
 //   주석을 통해 표현하는 경우가 많습니다.
@@ -32,6 +36,7 @@ int add(int a, int b, int c /* =0 */, int d /* =0 */)
 {
     return a + b + c + d;
 }
+#endif
 
 #if 0
 int add(int a, int b, int c, int d)
