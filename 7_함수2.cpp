@@ -40,8 +40,8 @@ long long square(long long x) { return x * x; }
 // C로 구현된 foo를 C++에서 호출할 때의 선언입니다.
 extern "C" void foo();
 
+// C++로 구현된 함수를 C에서 호출할 수 있습니다.
 extern "C" void goo();
-
 void goo()
 {
     cout << "goo" << endl;
