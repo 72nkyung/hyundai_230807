@@ -10,6 +10,7 @@ using namespace std;
 //   템플릿을 이용해서 컴파일 시간에 코드를 생성할 수 있습니다.
 
 // C++ Template
+#if 0
 template <typename TYPE>
 inline TYPE square(TYPE x) { return x * x; }
 // 장점: 적은 코드로 모든 타입에서 동작하는 일반적인 함수를 정의할 수 있습니다.
@@ -33,4 +34,21 @@ int main()
     cout << square<double>(5.5f) << endl;
     // TYPE -> double
     //  => 명시적 타입 지정
+}
+#endif
+
+template <typename T1, typename T2>
+void foo(T1 a, T2 b)
+{
+}
+
+int main()
+{
+    foo(10, 3.14);
+    // T1 -> int
+    // T2 -> double
+    // foo<int, double>(10, 3.14)
+    //    ------------- --------
+    //         |           |
+    //      타입 파라미터   값 파라미터
 }
