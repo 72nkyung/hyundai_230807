@@ -2,3 +2,4 @@
 a.out
 ~*.pptx
 .DS_Store
+.vscode
