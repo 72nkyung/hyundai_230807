@@ -11,7 +11,7 @@ using namespace std;
 //  1) 반드시 뒤에서부터 지정해야 합니다.
 //  2) 기본 파라미터는 함수의 선언부에만 작성됩니다.
 
-// 선언
+// 선언 => 헤더 파일
 int add(int a, int b, int c = 0, int d = 0);
 
 int main()
