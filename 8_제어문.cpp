@@ -55,8 +55,16 @@ int main()
 }
 #endif
 
-// if statement with initializer, C++17
+// if/switch statement with initializer, C++17
 // => 조건문에서만 유효한 변수를 정의할 수 있습니다.
+
+enum {
+    TASK_RUNNING,
+    TASK_STOPPED
+};
+
+int GetState() { return TASK_RUNNING; }
+
 int main()
 {
     if (File* ret = OpenFile("a.txt"); ret == NULL) {
@@ -65,5 +73,15 @@ int main()
 
     if (int ret = Process(); ret != 0) {
         cout << "Process failed..." << endl;
+    }
+
+    switch (int state = GetState(); state) {
+    case TASK_RUNNING:
+        cout << "state: " << state << endl;
+        break;
+    case TASK_STOPPED:
+        break;
+    default:
+        break;
     }
 }
