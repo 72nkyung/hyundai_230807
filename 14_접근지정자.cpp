@@ -37,6 +37,7 @@ public:
 
     // 방법 2. friend
     friend void PrintUser(User user);
+    friend class UserPrinter;
 };
 
 // 일반 함수
@@ -46,10 +47,21 @@ void PrintUser(User user)
     // cout << user.GetName() << ", " << user.GetAge() << endl;
 }
 
+class UserPrinter {
+public:
+    void PrintUser(User user)
+    {
+        cout << user.name << ", " << user.age << endl;
+    }
+};
+
 int main()
 {
     // User user("Tom", 42);
     // User user = { "Tom", 42 };
     User user { "Tom", 42 };
     PrintUser(user);
+
+    UserPrinter printer;
+    printer.PrintUser(user);
 }
