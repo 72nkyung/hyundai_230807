@@ -5,6 +5,7 @@ using namespace std;
 // 변수와 동일한 타입의 변수를 만들고 싶다면
 //  - decltype 연산자를 사용하면 됩니다.
 //  - C++11
+//  - GCC extention에서 제공되던, typeof와 동일합니다.
 
 // decltype은 초기화가 반드시 필요하지 않습니다.
 

@@ -5,12 +5,12 @@ using namespace std;
 #if 0
 int main()
 {
-    double x[3] = { 10, 20, 30 };
+    int x[3] = { 10, 20, 30 };
 
-    double* p = x;
+    int* p = x;
     // p의 타입은 x의 타입에 의존성이 있습니다.
 
-    double e = x[0];
+    int e = x[0];
 }
 #endif
 
@@ -28,11 +28,14 @@ int main()
     auto e = x[0];
 
     // auto n;
-    // - auto를 사용하기 위해서는 반드시 초기화가 필요합니다.
+    // - auto를 사용하기 위해서는 반드시 초기화(우항)가 필요합니다.
 }
 #endif
 
+#if 1
 // auto는 우항과 타입과 동일한 타입으로 추론되는 것이 아닙니다.
+// => Type deduction
+
 int main()
 {
     const int n = 42; // 상수 - const int
@@ -43,3 +46,4 @@ int main()
     const auto x2 = n; // const int
     // x2 = 10; // 컴파일 오류!
 }
+#endif
