@@ -43,7 +43,6 @@ int main()
 
 // 일반적으로 생성자와 소멸자를 public 영역에 두어야 합니다.
 // => 필요에 따라서 생성자와 소멸자를 public이 아닌 영역에 두기도 합니다.
-
 class Sample {
 public:
     Sample() { }
