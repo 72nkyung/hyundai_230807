@@ -4,7 +4,10 @@ using namespace std;
 
 // 기존
 #if 0
-int add(int a, int b) { return a + b; }
+int add(int a, int b)
+{
+    return a + b;
+}
 
 int (*foo())[3]
 {
@@ -13,6 +16,7 @@ int (*foo())[3]
 }
 #endif
 
+#if 1
 // 함수를 만드는 새로운 방법을 제공합니다. - C++11
 // - Trailing Return Type
 auto add(int a, int b) -> int { return a + b; }
@@ -33,6 +37,7 @@ auto goo()
 
 // int + long => long + long => long
 // long + int => long + long => long
+// double + float => double + double => double
 
 // 2) 인자의 타입을 통해 반환 타입을 결정할 경우,
 //    아래와 같이 작성되어야 합니다.
@@ -45,3 +50,4 @@ auto add(T1 a, T2 b) -> decltype(a + b)
 int main()
 {
 }
+#endif
