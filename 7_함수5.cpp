@@ -12,7 +12,10 @@ using namespace std;
 // C++ Template
 #if 0
 template <typename TYPE>
-inline TYPE square(TYPE x) { return x * x; }
+inline TYPE square(TYPE x)
+{
+    return x * x;
+}
 // 장점: 적은 코드로 모든 타입에서 동작하는 일반적인 함수를 정의할 수 있습니다.
 // 단점
 //  - 인자의 타입의 종류에 따라서 함수가 생성되므로,
@@ -37,6 +40,7 @@ int main()
 }
 #endif
 
+#if 0
 template <typename T1, typename T2>
 void foo(T1 a, T2 b)
 {
@@ -62,3 +66,7 @@ int main()
     //  'A'  --> a
     //  42   --> b
 }
+#endif
+
+// C++ 표준 라이브러리
+// => STL(Standard Template Library)
