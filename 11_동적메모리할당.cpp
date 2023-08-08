@@ -40,7 +40,7 @@ int main()
 
 // 6. delete 연산자를 통해 할당받은 메모리를 해지할 수 있습니다.
 //    NULL이 전달되었을 때, 아무일도 수행하지 않습니다.
-
+#if 0
 int main()
 {
     int* p = new int;
@@ -52,4 +52,22 @@ int main()
 
     int* p2 = NULL;
     delete p2;
+}
+#endif
+
+int main()
+{
+    int* p1 = static_cast<int*>(malloc(sizeof(int) * 10));
+    p1[0] = 10;
+    p1[9] = 100;
+    free(p1);
+
+    // new를 통해서 연속된 메모리를 할당하는 방법
+    int* p2 = new int[10];
+    p2[0] = 10;
+    p2[9] = 100;
+
+    // * 연속된 메모리를 해지할 때는 반드시 delete가 아닌 delete[] 연산자를
+    // 사용해야 합니다.
+    delete[] p2;
 }
