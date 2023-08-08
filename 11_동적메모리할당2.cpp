@@ -3,6 +3,11 @@
 #include <cstdlib>
 using namespace std;
 
+struct Point {
+    int x;
+    int y;
+};
+
 int main()
 {
     int* p1 = static_cast<int*>(malloc(sizeof(int)));
@@ -28,4 +33,9 @@ int main()
     cout << p5[1] << endl;
     cout << p5[2] << endl;
     delete[] p5;
+
+    Point* pt = new Point { 10, 20 };
+    cout << pt->x << endl;
+    cout << pt->y << endl;
+    delete pt;
 }
