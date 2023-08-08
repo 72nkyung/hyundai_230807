@@ -51,3 +51,6 @@ int main()
 {
 }
 #endif
+
+// Kotlin, Swift, Go, Rust ...
+// => Trailing Return Type으로 함수를 정의합니다.
