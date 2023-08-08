@@ -32,7 +32,7 @@ int main()
 #endif
 
 // 4. C++은 동적 메모리 할당의 기능을 연산자로 제공합니다.
-//    new / delete
+//    new / delete / delete[]
 
 // 5. new는 타입을 전달합니다.
 //    new 연산자의 결과는 전달받은 타입의 주소 타입이 결과입니다.
