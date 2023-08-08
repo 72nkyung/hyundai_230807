@@ -9,31 +9,37 @@ using namespace std;
 
 #if 0
 //     tag
-struct complex {
+typedef struct complex {
     int re;
     int im;
-};
+} COMPLEX;
 
-union data {
+typedef union data {
     int i32;
     long long i64;
-};
+} DATA;
 
-enum task_state {
+typedef enum task_state {
     RUNNING,
     STOPPED
-};
+} TASK_STATE;
 
 // C에서는 사용자 정의 타입 변수를 만들 때, 반드시
 // struct 태그 / union 태그 / enum 태그 형태로 타입을 명시해야 합니다.
 int main()
 {
     struct complex c1;
+    COMPLEX c2;
+
     union data data;
+    DATA data2;
+
     enum task_state state;
+    TASK_STATE state2;
 }
 #endif
 
+#if 1
 struct Complex {
     int re;
     int im;
@@ -57,3 +63,4 @@ int main()
     Data data;
     TaskState state;
 }
+#endif

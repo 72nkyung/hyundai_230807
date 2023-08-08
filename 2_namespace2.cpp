@@ -39,13 +39,13 @@ int main()
 }
 #endif
 
+#if 0
 namespace audio {
 namespace mp3 {
     void play() { }
 }
 }
 
-#if 0
 // 방법 3. using 지시어(Directive)
 // > 특정한 이름 공간(namespace)에 있는 모든 것을
 // 암묵적으로 접근할 수 있습니다.

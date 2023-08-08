@@ -19,6 +19,7 @@
 //   C++14: 2차 표준안 개정
 // - C++17: 3차 표준안
 //   C++20
+// - C++23
 
 // 4. C++안에서 C의 문법을 지원합니다.
 // > C의 표준과 C++안에서의 C의 표준은 다릅니다.
@@ -27,20 +28,30 @@
 #include <stdio.h>
 int main(void)
 {
-	int n;
-	scanf("%d", &n);
+    int n;
+    scanf("%d", &n);
 
-	printf("Hello, C\n");
-	return 0;
+    printf("Hello, C\n");
+    return 0;
 }
 #endif
 
 // C++의 표준헤더는 확장자가 없는 경우가 많습니다.
 #include <cstdio>
+// stdlib.h -> cstdlib
+// string.h -> cstring
+// ctype.h  -> cctype
+
 // => C의 표준라이브러리 함수를 std의 이름 공간에서 사용할 수 있습니다.
+
+// void foo() { }
+
+int foo() { } // 미정의 동작
 
 int main()
 {
+    // foo(10, 20);
+
     std::printf("Hello, C++\n");
 
     // return 0;

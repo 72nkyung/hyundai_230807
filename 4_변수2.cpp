@@ -59,19 +59,35 @@ int main()
 }
 #endif
 
+#if 1
 // Uniform Initialization을 사용하는 경우,
 // 암묵적인 변환(실수 -> 정수, 정수 -> 실수, long -> int)을
 // 허용하지 않습니다.
 // => Preventing Narrow
+//   : Overflow가 발생하는지 여부를 확인할 수 있도록
+//     암묵적인 변환을 허용하지 않습니다.
+
 //  : 명시적인 캐스팅이 필요합니다.
+#include <climits>
 
 int main()
 {
     double d = 3.14;
     // int x = { d }; // 에러!
-    int x = { (int)d }; // Uniform Copy initialization
+
+    if (d > INT_MAX || d < INT_MIN) {
+        std::cout << "Overflow" << std::endl;
+    } else {
+        int x = { (int)d }; // Uniform Copy initialization
+    }
 
     long long n = 10000LL;
     // int x2 { n }; // 에러!
-    int x2 { (int)n }; // Uniform Direct initialization
+
+    if (n > INT_MAX || n < INT_MIN) {
+        std::cout << "Overflow" << std::endl;
+    } else {
+        int x2 { (int)n }; // Uniform Direct initialization
+    }
 }
+#endif
