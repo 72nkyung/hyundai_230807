@@ -19,7 +19,7 @@ using namespace std;
 // C++11 - constexpr
 //   : 상수 표현식에 지정할 수 있는 키워드입니다.
 
-#if 0
+#if 1
 int main()
 {
     int a = 10 + 5;
@@ -57,6 +57,7 @@ int main()
 }
 #endif
 
+#if 0
 int main()
 {
     constexpr int c1 = 100;
@@ -67,3 +68,11 @@ int main()
     // 실행 시간에 이후에 값을 변경할 수 없습니다.
     // C++에서는 반드시 const 변수는 초기화를 해야 합니다.
 }
+#endif
+
+const int C1 = 100;
+// C: External linkage
+
+// C++ 에서는 const 전역 변수는 Internal linkage를 갖습니다.
+// : 다른 파일에서 접근이 불가능합니다.
+// => const 전역 변수는 헤더파일에 두어야 합니다.
