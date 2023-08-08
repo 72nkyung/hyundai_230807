@@ -23,6 +23,21 @@ public:
 // * free를 통해서 객체를 파괴하면, 소멸자가 호출되지 않습니다.
 // * new를 통해서 객체를 생성하면, 생성자가 호출됩니다.
 // * delete를 통해서 객체를 파괴하면, 소멸자가 호출됩니다.
+
+int main()
+{
+    // Point* pt = new Point[3];
+    Point* pt = new Point[3] {
+        // Point(10, 20), Point(30, 40), Point(50, 60)
+        // Point(10, 20), Point(), Point(50, 60)
+        // Point { 10, 20 }, Point {}, Point { 50, 60 }
+        { 10, 20 }, {}, { 50, 60 }
+    };
+
+    delete[] pt;
+}
+
+#if 0
 int main()
 {
     // Point* pt = new Point; // Point()
@@ -31,6 +46,7 @@ int main()
 
     delete pt;
 }
+#endif
 
 #if 0
 int main()
