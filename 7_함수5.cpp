@@ -10,7 +10,7 @@ using namespace std;
 //   템플릿을 이용해서 컴파일 시간에 코드를 생성할 수 있습니다.
 
 // C++ Template
-#if 0
+#if 1
 template <typename TYPE>
 inline TYPE square(TYPE x)
 {
