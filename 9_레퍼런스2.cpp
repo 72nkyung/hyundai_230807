@@ -7,9 +7,12 @@ void inc1(int x)
     ++x;
 }
 
+// 포인터가 사용되기 전에는 반드시 유효성 체크를 해야합니다.
 void inc2(int* px)
 {
-    ++(*px);
+    if (px) {
+        ++(*px);
+    }
 }
 
 void inc3(int& r)
