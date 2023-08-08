@@ -12,7 +12,7 @@ using namespace std;
 //    * 소멸자
 //     - ~클래스이름() 형태입니다.
 //     - 클래스는 소멸자를 1개만 가질 수 있습니다.
-
+#if 0
 class Person {
     char* name;
 
@@ -39,3 +39,19 @@ int main()
     Person person("Tom");
     person.Print();
 }
+#endif
+
+// 일반적으로 생성자와 소멸자를 public 영역에 두어야 합니다.
+// => 필요에 따라서 생성자와 소멸자를 public이 아닌 영역에 두기도 합니다.
+
+class Sample {
+public:
+    Sample() { }
+    ~Sample() { }
+};
+
+int main()
+{
+    Sample s;
+    // Sample::Sample()
+} // Sample::~Sample()
