@@ -13,7 +13,9 @@ class User {
     int age;
 
 public:
-    User(const User& rhs) = delete;
+    User(const User& rhs) = delete; // 복사 금지
+    User(User&& rhs) = delete; // 이동 금지
+    // 이동 생성자를 제공하지 않으면, 복사 생성자를 이용합니다.
 
     User(const char* s, int n)
         : age { n }
@@ -35,6 +37,6 @@ int main()
     User user { "Tom", 42 };
     user.Print();
 
-    // User other = user;
-    // other.Print();
+    User other = std::move(user);
+    other.Print();
 }
