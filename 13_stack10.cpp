@@ -153,36 +153,12 @@ int main()
 }
 #endif
 
-template <typename TYPE>
-class Stack {
-private:
-    // int buff[10];
-    TYPE* buff;
-    int top;
+// 템플릿은 반드시 헤더를 통해서만 제공되어야 합니다.
+// 템플릿 라이브러리는 .hpp(.h + .cpp)로 제공되는
+// 경우가 많습니다.
+//  stack.hpp
 
-public:
-    // 기본 파라미터는 불필요한 오버로딩을 제거할 수 있습니다.
-    Stack(int size = 10)
-    {
-        top = 0;
-        buff = new TYPE[size];
-    }
-
-    ~Stack()
-    {
-        delete[] buff;
-    }
-
-    void push(TYPE n)
-    {
-        buff[top++] = n;
-    }
-
-    TYPE pop()
-    {
-        return buff[--top];
-    }
-};
+#include "stack.hpp"
 
 int main()
 {
