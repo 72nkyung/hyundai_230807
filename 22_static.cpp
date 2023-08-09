@@ -24,9 +24,9 @@ int main()
 
 class Car {
 private:
+public:
     static int cnt; // 정적 멤버 데이터 - 선언
 
-public:
     Car() { ++cnt; }
     ~Car() { --cnt; }
 
@@ -41,4 +41,14 @@ int main()
 {
     Car c[5];
     cout << c[0].GetCount() << endl;
+
+    Car car;
+
+    // 정적 멤버 데이터에 접근하는 방법 2가지
+    // 1) 클래스이름::cnt
+    cout << Car::cnt << endl;
+
+    // 2) 객체.cnt
+    cout << c[0].cnt << endl;
+    cout << car.cnt << endl;
 }
