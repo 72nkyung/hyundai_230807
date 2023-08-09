@@ -94,7 +94,6 @@ Sample(Sample&&)
 */
 
 // 지역 객체 -> 반환용 임시 객체 생성 ---> result 지역 객체 생성
-
 int main()
 {
     Sample result = foo(); // 반환용 임시 객체를 지역 객체로 이동/복사
