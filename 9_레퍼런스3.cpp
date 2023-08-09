@@ -100,9 +100,15 @@ void PrintArray(int (&x)[5])
 template <typename TYPE>
 void PrintArray(TYPE& x)
 {
+#if 0
     constexpr size_t len = sizeof(x) / sizeof(x[0]);
     for (size_t i = 0; i < len; ++i) {
         cout << x[i] << endl;
+    }
+#endif
+
+    for (auto e : x) {
+        cout << e << endl;
     }
 }
 
