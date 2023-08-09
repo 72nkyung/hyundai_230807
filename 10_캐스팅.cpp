@@ -36,6 +36,7 @@ int main()
 }
 #endif
 
+#if 1
 // C++ 캐스팅 연산자
 // 1) static_cast
 //  : 가장 기본적인 C++의 캐스팅 연산자
@@ -90,3 +91,4 @@ int main()
     // int* pn = reinterpret_cast<int*>(pcn); /* 오류 */
     int* pn = const_cast<int*>(pcn);
 }
+#endif
