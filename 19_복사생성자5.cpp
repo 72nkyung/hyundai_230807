@@ -85,6 +85,7 @@ Sample foo()
 // g++ 19_복사생성자5.cpp -fno-elide-constructors -std=c++17
 // > 복사(이동) 생성자의 제거가 컴파일러의 최적화 레벨이 아니라,
 //   C++17의 언어 표준이 되었습니다.
+//   "Mandatory Copy ellison"
 
 /*
 Sample()
