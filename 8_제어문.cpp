@@ -43,6 +43,7 @@ int main()
 }
 #endif
 
+#if 0
 int main()
 {
     int x[3] = { 10, 20, 30 };
@@ -55,8 +56,9 @@ int main()
         cout << e << endl;
     }
 }
+#endif
 
-#if 0
+#if 1
 struct File { };
 
 File* OpenFile(std::string filename)
