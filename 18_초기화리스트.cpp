@@ -38,6 +38,7 @@ public:
 };
 #endif
 
+#if 0
 class Sample {
     const int c;
     int& r;
@@ -51,6 +52,45 @@ public:
     {
     }
 };
+
+int main()
+{
+}
+#endif
+
+#if 0
+class Point {
+    int x;
+    int y;
+
+public:
+    // 멤버 데이터는 초기화 리스트를 통해 초기화하는 것이 좋습니다.
+    Point(int a, int b)
+        : x { a }
+        , y { b }
+    {
+    }
+};
+#endif
+
+// 주의: 초기화 리스트의 순서대로 초기화되는 것이 아니라,
+//      멤버 데이터가 선언된 순서대로 초기화됩니다.
+//  => 초기화리스트를 작성하실 때, 멤버 데이터 선언 순서대로 작성하는 것이 좋습니다.
+class Point {
+    int x;
+    int y;
+
+public:
+    Point();
+};
+
+// 초기화 리스트는 구현부에 작성됩니다.
+Point::Point()
+    // : y(10) ,x(y) /* 미정의 동작 - x가 먼저 초기화됩니다. */
+    : x(10)
+    , y(x)
+{
+}
 
 int main()
 {
