@@ -82,11 +82,13 @@ class Point {
 
 public:
     Point();
+
+    void Print() { cout << x << ", " << y << endl; }
 };
 
 // 초기화 리스트는 구현부에 작성됩니다.
 Point::Point()
-    // : y(10) ,x(y) /* 미정의 동작 - x가 먼저 초기화됩니다. */
+    // : y(10), x(y) /* 미정의 동작 - x가 먼저 초기화됩니다. */
     : x(10)
     , y(x)
 {
@@ -94,4 +96,6 @@ Point::Point()
 
 int main()
 {
+    Point pt;
+    pt.Print();
 }
