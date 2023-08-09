@@ -39,3 +39,6 @@ int main()
     foo();
     cout << "----------" << endl;
 }
+
+// g++ 19_복사생성자4.cpp -fno-elide-constructors
+//                    ------------------------ RVO/NRVO 제거 옵션
