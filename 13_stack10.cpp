@@ -64,10 +64,15 @@ int main()
 }
 #endif
 
-struct Stack {
+// private: 외부에서 접근할 수 없고, 멤버 함수를 통해서만 접근이 가능하다.
+//  public: 외부에서 접근이 가능하다.
+#if 0
+class Stack {
+private:
     int buff[10];
     int top;
 
+public:
     void init()
     {
         top = 0;
@@ -92,6 +97,102 @@ int main()
     s1.push(10);
     s1.push(20);
     s1.push(30);
+
+    // s1.top = 0;
+
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+}
+#endif
+
+#if 0
+class Stack {
+private:
+    // int buff[10];
+    int* buff;
+    int top;
+
+public:
+    // 기본 파라미터는 불필요한 오버로딩을 제거할 수 있습니다.
+    Stack(int size = 10)
+    {
+        top = 0;
+        buff = new int[size];
+    }
+
+    ~Stack()
+    {
+        delete[] buff;
+    }
+
+    void push(int n)
+    {
+        buff[top++] = n;
+    }
+
+    int pop()
+    {
+        return buff[--top];
+    }
+};
+
+int main()
+{
+    Stack s1(100);
+
+    s1.push(10);
+    s1.push(20);
+    s1.push(30);
+
+    // s1.top = 0;
+
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+}
+#endif
+
+template <typename TYPE>
+class Stack {
+private:
+    // int buff[10];
+    TYPE* buff;
+    int top;
+
+public:
+    // 기본 파라미터는 불필요한 오버로딩을 제거할 수 있습니다.
+    Stack(int size = 10)
+    {
+        top = 0;
+        buff = new TYPE[size];
+    }
+
+    ~Stack()
+    {
+        delete[] buff;
+    }
+
+    void push(TYPE n)
+    {
+        buff[top++] = n;
+    }
+
+    TYPE pop()
+    {
+        return buff[--top];
+    }
+};
+
+int main()
+{
+    Stack<int> s1(100);
+
+    s1.push(10);
+    s1.push(20);
+    s1.push(30);
+
+    // s1.top = 0;
 
     cout << s1.pop() << endl;
     cout << s1.pop() << endl;
