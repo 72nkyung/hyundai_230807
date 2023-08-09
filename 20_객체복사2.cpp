@@ -8,12 +8,14 @@ class User {
     int age;
 
 public:
-    // 컴파일러가 제공하는 복사 생성자
+    //----
     User(const User& rhs)
-        : name { rhs.name }
-        , age { rhs.age }
+        : age { rhs.age }
     {
+        name = new char[strlen(rhs.name) + 1];
+        strcpy(name, rhs.name);
     }
+    //----
 
     User(const char* s, int n)
         : age { n }
