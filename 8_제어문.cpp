@@ -25,6 +25,38 @@ int main()
 }
 #endif
 
+#if 0
+int main()
+{
+    // auto => Type deduction
+    const int a = 42; // a: const int
+    // auto b = a; // b: int
+    // b = 42;
+
+    int x = 42;
+    int& r = x; // r: int&
+
+    auto& r2 = r; // r2: int&
+    r2 = 100;
+
+    cout << x << endl;
+}
+#endif
+
+int main()
+{
+    int x[3] = { 10, 20, 30 };
+
+    for (auto& e : x) {
+        e += 10;
+    }
+
+    for (auto e : x) {
+        cout << e << endl;
+    }
+}
+
+#if 0
 struct File { };
 
 File* OpenFile(std::string filename)
@@ -85,3 +117,4 @@ int main()
         break;
     }
 }
+#endif
