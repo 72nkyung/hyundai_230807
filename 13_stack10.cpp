@@ -158,6 +158,7 @@ int main()
 // 경우가 많습니다.
 //  stack.hpp
 
+#if 0
 #include "stack.hpp"
 
 int main()
@@ -173,4 +174,25 @@ int main()
     cout << s1.pop() << endl;
     cout << s1.pop() << endl;
     cout << s1.pop() << endl;
+}
+#endif
+
+#include <stack>
+
+int main()
+{
+    stack<int> s1;
+
+    s1.push(10);
+    s1.push(20);
+    s1.push(30);
+
+    cout << s1.top() << endl;
+    s1.pop();
+
+    cout << s1.top() << endl;
+    s1.pop();
+
+    cout << s1.top() << endl;
+    s1.pop();
 }
