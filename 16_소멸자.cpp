@@ -12,7 +12,7 @@ using namespace std;
 //    * 소멸자
 //     - ~클래스이름() 형태입니다.
 //     - 클래스는 소멸자를 1개만 가질 수 있습니다.
-#if 0
+#if 1
 class Person {
     char* name;
 

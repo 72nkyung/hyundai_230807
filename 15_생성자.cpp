@@ -38,7 +38,7 @@ int main()
     // Point pt(10, 20);
     Point pt { 10, 20 };
 
-    Point pt2; /* 컴파일 오류! */
+    // Point pt2; /* 컴파일 오류! */
 }
 #endif
 
