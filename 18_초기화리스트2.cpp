@@ -73,8 +73,8 @@ public:
 int main()
 {
     User user;
-    user.Print();
+    user.Print(); // "Tom", 0
 
     User other { "Bob", 42 };
-    other.Print();
+    other.Print(); // "Bob", 42
 }
