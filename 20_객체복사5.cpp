@@ -41,7 +41,14 @@ public:
         delete[] name;
     }
 
-    void Print() { cout << name << ", " << age << endl; }
+    void Print()
+    {
+        if (name) {
+            cout << name << ", " << age << endl;
+        } else {
+            cout << "(null)" << endl;
+        }
+    }
 };
 
 int main()
@@ -49,7 +56,12 @@ int main()
     User user { "Tom", 42 };
     user.Print();
 
-    // User other = user;
-    User other = User("Bob", 100);
+    // User other = User("Bob", 100);
+
+    // C++11에서 lvalue를 rvalue로 변경할 수 있는 연산을 제공합니다.
+    //  : std::move
+
+    User other = std::move(user);
+    user.Print();
     other.Print();
 }
