@@ -15,7 +15,7 @@ public:
 //     const& 형태로 전달합니다.
 
 // 해결방법: void foo(const Sample& s)
-
+#if 0
 void foo(Sample s) // Sample(const Sample&)
 {
 } // ~Sample()
@@ -28,3 +28,33 @@ int main()
     foo(s);
     cout << "------------" << endl;
 }
+#endif
+
+#if 0
+class Point {
+public:
+    int x;
+    int y;
+
+    Point(int a, int b)
+        : x { a }
+        , y { b }
+    {
+    }
+
+    void Print() { cout << x << ", " << y << endl; }
+};
+
+void foo(const Point& pt) // pt를 읽기만 하겠습니다.
+{
+    // pt.x = 100;
+    // pt.y = 200;
+}
+
+int main()
+{
+    Point pt { 10, 20 };
+    foo(pt);
+    pt.Print();
+}
+#endif
