@@ -15,12 +15,14 @@ void foo(int (&r)[5])
 {
     cout << sizeof(r) << endl;
 }
+#endif
 
 // Decay 예외
 // 1) sizeof
 // 2) 주소(&)
 // 3) 레퍼런스
 
+#if 0
 int main()
 {
     int x[5] = { 1, 2, 3, 4, 5 };
@@ -57,3 +59,58 @@ int main()
     cout << sizeof(r) << endl;
 }
 #endif
+
+// C 에서 배열을 이용하는 함수를 구현하는 방법
+#if 0
+void PrintArray(int* x, int n)
+{
+    for (int i = 0; i < n; i++) {
+        cout << x[i] << endl;
+    }
+}
+
+int main()
+{
+    int x1[3] = { 10, 20, 30 };
+    int x2[5] = { 1, 2, 3, 4, 5 };
+
+    PrintArray(x1, 3);
+    PrintArray(x2, 5);
+}
+#endif
+
+#if 0
+void PrintArray(int (&x)[3])
+{
+    constexpr size_t len = sizeof(x) / sizeof(x[0]);
+    for (size_t i = 0; i < len; ++i) {
+        cout << x[i] << endl;
+    }
+}
+
+void PrintArray(int (&x)[5])
+{
+    constexpr size_t len = sizeof(x) / sizeof(x[0]);
+    for (size_t i = 0; i < len; ++i) {
+        cout << x[i] << endl;
+    }
+}
+#endif
+
+template <typename TYPE>
+void PrintArray(TYPE& x)
+{
+    constexpr size_t len = sizeof(x) / sizeof(x[0]);
+    for (size_t i = 0; i < len; ++i) {
+        cout << x[i] << endl;
+    }
+}
+
+int main()
+{
+    int x1[3] = { 10, 20, 30 };
+    PrintArray(x1);
+
+    int x2[5] = { 1, 2, 3, 4, 5 };
+    PrintArray(x2);
+}
