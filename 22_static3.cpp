@@ -74,5 +74,6 @@ int main()
 
     s.goo(); // Sample::goo()
 
-    s.goo2(&s);
+    // s.goo2(&s);
+    Sample::goo2(&s);
 }
