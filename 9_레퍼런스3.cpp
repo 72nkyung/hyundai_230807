@@ -97,6 +97,7 @@ void PrintArray(int (&x)[5])
 }
 #endif
 
+#if 1
 template <typename TYPE>
 void PrintArray(TYPE& x)
 {
@@ -120,3 +121,20 @@ int main()
     int x2[5] = { 1, 2, 3, 4, 5 };
     PrintArray(x2);
 }
+#endif
+
+#if 0
+using TYPE = int[3];
+
+int main()
+{
+    int x[3] = { 10, 20, 30 };
+
+    int(*p)[3] = &x;
+    int(&r)[3] = x;
+
+    TYPE x2 = { 10, 20, 30 };
+    TYPE* p2 = &x2;
+    TYPE& r2 = x2;
+}
+#endif

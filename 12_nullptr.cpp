@@ -3,7 +3,10 @@
 using namespace std;
 
 #if 0
-void foo(int n) { cout << "int" << endl; }
+void foo(int n)
+{
+    cout << "int" << endl;
+}
 void foo(int* p) { cout << "int*" << endl; }
 
 int main()
@@ -23,6 +26,7 @@ int main()
 }
 #endif
 
+#if 1
 // C++11, 기존의 NULL을 대체하는 새로운 nullptr이 도입되었습니다.
 // => nullptr_t 타입으로 설계되었습니다.
 //    : 포인터 타입으로의 암묵적인 변환을 허용하고, 논리 표현식에서 false로 판단되는
@@ -42,3 +46,4 @@ int main()
         cout << "p는 null 입니다." << endl;
     }
 }
+#endif
