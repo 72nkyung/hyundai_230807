@@ -20,6 +20,7 @@ int main()
 //  의도: 객체 생성을 new를 통해서만 허용하겠다.
 //  => 객체를 파괴하는 기능을 멤버 함수를 통해서 제공해야 합니다.
 
+#if 0
 class Sample {
 private:
     ~Sample() { cout << "~Sample()" << endl; }
@@ -45,4 +46,38 @@ int main()
     // 이순간 소멸자가 수행되어야 합니다.
 
     // delete p;
+}
+#endif
+
+class Sample {
+private:
+    int ref;
+
+    ~Sample() { cout << "~Sample()" << endl; }
+
+public:
+    Sample()
+        : ref(1)
+    {
+        cout << "Sample()" << endl;
+    }
+
+    void AddRef() { ++ref; }
+    void Destroy() // void Destroy(Sample* this)
+    {
+        if (--ref == 0) {
+            delete this;
+        }
+    }
+};
+
+int main()
+{
+    Sample* s1 = new Sample(); // ref: 1
+
+    Sample* s2 = s1;
+    s2->AddRef(); // ref: 2
+
+    s1->Destroy();
+    s2->Destroy();
 }

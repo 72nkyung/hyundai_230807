@@ -10,6 +10,8 @@ class Point {
     int y;
 
 public:
+    // thiscall
+    // : 함수가 호출될 때, this를 통해 객체의 주소가 전달됩니다.
     void Set(int a, int b) // void Set(Point* this, int a, int b)
     {
         cout << this << endl;
